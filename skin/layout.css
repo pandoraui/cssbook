@@ -16,6 +16,7 @@ body{height:100%;}
 /* module: mashead */
 #mashead{margin-top:0;}
 #mashead .sitename{display:inline;float:left;margin:15px 20px 0 40px;}
+#mashead .sitename a,#mashead .sitename a:hover{color:#fff;text-decoration: none;}
 #mashead .sitename h1{color:#fff;font-size:32px;line-height:1;text-shadow:1px 1px 0 rgba(0,0,0,1),1px 1px 5px rgba(255,255,255,.8);}
 #mashead .sitename h2{color:#333;font-weight:normal;text-shadow:1px 1px 0 rgba(255,255,255,.3),1px 1px 5px rgba(0,0,0,.1);}
 #mashead .related{float:right;padding:46px 10px 0 0;}
