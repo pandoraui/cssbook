@@ -87,7 +87,7 @@ Global.getRel = function(id){
 	if(!tag.length){return};
 	Global.rel = tag.attr('rel');
 	Global.name = tag.attr('name');
-	Global.url = 'http://css.doyoe.com/' + Global.rel + '/' + Global.name + '.htm';
+	Global.url = 'http://pandoraui.github.io/cssbook/' + Global.rel + '/' + Global.name + '.htm';
 }('#category');
 
 Global.copy = function(content,isAlertContent){
