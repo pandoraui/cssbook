@@ -14,3 +14,15 @@ CSS参考手册——[飘零雾雨](http://css.doyoe.com)
 本手册受著作权法和国际公约的保护，作者保留对本手册及本声明的最终修改权。
 
 本手册的部分内容参考了苏沈小雨版的CSS2.0手册及World Wide Web Consortium (W3C)公开的网络文档。
+
+
+### Git 分支操作
+
+    //关联远程分支
+    $ cd your_repo_root/repo_name
+    $ git fetch origin
+    $ git checkout gh-pages
+
+
+    //推送分支到远程
+    git push --set-upstream origin gh-pages
