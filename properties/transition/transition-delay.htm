@@ -62,8 +62,9 @@
 		<div class="cont">
 			<dl>
 				<dt><a href="../../values/other/time.htm">&lt;time&gt;</a>：</dt>
-				<dd>指定对象过渡的延迟时间</dd>
+				<dd>可选。定义动画开始前等待的时间，以秒或毫秒计。默认值是 0。</dd>
 			</dl>
+            <p class="tip"><span>提示：</span>允许负值，-2s 使动画马上开始，但跳过 2 秒进入动画。</p>
 		</div>
 	</section>
 	<section id="intro" class="g-mod g-attr">
@@ -79,6 +80,7 @@
 	<section id="compatible" class="g-mod g-attr">
 		<h2 class="tit">兼容性：</h2>
 		<div class="cont">
+            <p class="note"><span>注释：</span>Internet Explorer 9 以及更早的版本不支持 animation-delay 属性。</p>
 			<ul class="support-type">
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
@@ -163,7 +165,7 @@ h1{font-size:16px;}
 </body>
 </html>
 			</textarea>
-			<p><input type="button" value="运行" class="gbtn btn-sure" /></p>
+			<p><input type="button" value="运行" class="g-btn g-btn-sure" /></p>
 		</div>
 	</section>
 </section>

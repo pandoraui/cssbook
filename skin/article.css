@@ -137,3 +137,11 @@ ol.gitem{list-style-type:decimal;}
 #tip-404{width:190px;margin:-60px 0 0 -95px;}
 #tip-continue{width:480px;margin:-60px 0 0 -240px;}
 #tip-continue h1 span{color:#666;font-size:30px;}
+p.note span, p.important span, p.tip span, p.inherited, p.inherited span, p.gototop, .html5_new_note span{font-weight: bold;}
+p.important span{color:#dd0000;}
+p.tip span{color:#ff9955;}
+p.inherited{color:#ff0000;}
+p.inherited span{color:#999;}
+p.chinese span {color:#0000ff;}
+.html5_new_note span{color:blue;}
+p.gototop{text-align:right;}

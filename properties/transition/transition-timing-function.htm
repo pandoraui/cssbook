@@ -59,7 +59,9 @@
 	</section>
 	<section id="value" class="g-mod g-attr">
 		<h2 class="tit">取值：</h2>
+		
 		<div class="cont">
+		    <p>animation-timing-function 使用名为三次贝塞尔（Cubic Bezier）函数的数学函数，来生成速度曲线。您能够在该函数中使用自己的值，也可以预定义的值：</p>
 			<dl>
 				<dt>linear：</dt>
 				<dd>线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)</dd>
@@ -136,39 +138,70 @@
 <style>
 h1{font-size:16px;}
 .test{overflow:hidden;width:100%;margin:0;padding:0;list-style:none;}
-.test li{position:relative;left:8px;width:220px;height:100px;margin:1px 5px;padding:10px;border:1px solid #ddd;background-color:#eee;color:#000;
-	-moz-transition-property:left;
-	-moz-transition-duration:.5s;
-	-webkit-transition-property:left;
-	-webkit-transition-duration:.5s;
-	-o-transition-property:left;
-	-o-transition-duration:.5s;
-	-ms-transition-property:left;
-	-ms-transition-duration:.5s;
-	transition-property:left;
-	transition-duration:.5s;
+.test li{padding:10px;margin:1px 5px;}
+.test li p{position:relative;left:8px;width:220px;height:100px;margin:0;border:1px solid #ddd;background-color:#eee;color:#000;
+    -webkit-transition-property: left;
+       -moz-transition-property: left;
+        -ms-transition-property: left;
+         -o-transition-property: left;
+            transition-property: left;
+    -webkit-transition-duration: .5s;
+       -moz-transition-duration: .5s;
+        -ms-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
 }
-.test li:nth-child(1){-moz-transition-timing-function:linear;-webkit-transition-timing-function:linear;-o-transition-timing-function:linear;-ms-transition-timing-function:linear;transition-timing-function:linear;}
-.test li:nth-child(2){-moz-transition-timing-function:ease;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;-ms-transition-timing-function:ease;transition-timing-function:ease;}
-.test li:nth-child(3){-moz-transition-timing-function:ease-in;-webkit-transition-timing-function:ease-in;-o-transition-timing-function:ease-in;-ms-transition-timing-function:ease-in;transition-timing-function:ease-in;}
-.test li:nth-child(4){-moz-transition-timing-function:ease-out;-webkit-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;-ms-transition-timing-function:ease-out;transition-timing-function:ease-out;}
-.test li:nth-child(5){-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;-ms-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;}
-.test li:hover{left:100px;}
+.test li:nth-child(1) p {
+-webkit-transition-timing-function: linear;
+   -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+     -o-transition-timing-function: linear;
+        transition-timing-function: linear;
+}
+.test li:nth-child(2) p {
+-webkit-transition-timing-function: ease;
+   -moz-transition-timing-function: ease;
+    -ms-transition-timing-function: ease;
+     -o-transition-timing-function: ease;
+        transition-timing-function: ease;
+}
+.test li:nth-child(3) p {
+-webkit-transition-timing-function: ease-in;
+   -moz-transition-timing-function: ease-in;
+    -ms-transition-timing-function: ease-in;
+     -o-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+}
+.test li:nth-child(4) p {
+-webkit-transition-timing-function: ease-out;
+   -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+     -o-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+}
+.test li:nth-child(5) p {
+-webkit-transition-timing-function: ease-in-out;
+   -moz-transition-timing-function: ease-in-out;
+    -ms-transition-timing-function: ease-in-out;
+     -o-transition-timing-function: ease-in-out;
+        transition-timing-function: ease-in-out;
+}
+.test li:hover p{left:70%;}
 </style>
 </head>
 <body>
 <h1>请将鼠标移动到下面的矩形上：</h1>
 <ul class="test">
-	<li>linear: 线性过渡</li>
-	<li>ease: 平滑过渡</li>
-	<li>ease-in: 由慢到快</li>
-	<li>ease-out: 由快到慢</li>
-	<li>ease-in-out: 由慢到快再到慢</li>
+	<li><p>linear: 线性过渡<br>动画从头到尾的速度是相同的</p></li>
+	<li><p>ease: 平滑过渡<br>动画以低速开始，然后加快，在结束前变慢</p></li>
+	<li><p>ease-in: 由慢到快</p></li>
+	<li><p>ease-out: 由快到慢</p></li>
+	<li><p>ease-in-out: 由慢到快再到慢</p></li>
 </ul>
 </body>
 </html>
 			</textarea>
-			<p><input type="button" value="运行" class="gbtn btn-sure" /></p>
+			<p><input type="button" value="运行" class="g-btn g-btn-sure" /></p>
 		</div>
 	</section>
 </section>
