@@ -437,6 +437,10 @@ Global.copy = function(content,isAlertContent){
 					'id' : ['ID选择符(E#id)'],
 					'class' : ['类选择符(E.class)']
 				},
+				'multiclass' : {
+					'index' : ['多类选择符','其它关系选择符参考'],
+					'mclass' : ['多类选择符(E.class1.class2)']
+				},
 				'relationship' : {
 					'index' : ['关系选择符','其它关系选择符参考'],
 					'ef' : ['包含选择符(E F)'],
