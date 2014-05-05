@@ -42,7 +42,7 @@
 		<h1 class="tit">padding-left</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -52,9 +52,11 @@
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
 			<p><strong>padding-left</strong>：<a href="../../values/other/length.htm">&lt;length&gt;</a> | <a href="../../values/other/percentage.htm">&lt;percentage&gt;</a></p>
-			<p><strong>默认值</strong>：<mark class="defaultvalue">	0</mark></p>
-			<p><strong>适用于</strong>：所有元素</p>
+			<p><strong>默认值</strong>：<mark class="defaultvalue">0</mark></p>
+			<p><strong>适用于</strong>：所有元素，除 table-row-group | table-header-group | table-footer-group | table-column-group | table-row 外</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：是</p>
+		    <p><strong>计算值</strong>：<a href="../../values/other/length.htm">&lt;length&gt;</a></p>
 			<p><strong>相关属性</strong>：[ <a href="padding.htm">padding</a> ] || [ <a href="padding-top.htm">padding-top</a> ] || [ <a href="padding-right.htm">padding-right</a> ] || [ <a href="padding-bottom.htm">padding-bottom</a> ]</p>
 		</div>
 	</section>
@@ -65,7 +67,7 @@
 				<dt><a href="../../values/other/length.htm">&lt;length&gt;</a>：</dt>
 				<dd>用长度值来定义内补白。不允许负值</dd>
 				<dt><a href="../../values/other/percentage.htm">&lt;percentage&gt;</a>：</dt>
-				<dd>用百分比来定义内补白。不允许负值</dd>
+				<dd>用百分比来定义内补白。水平（默认）书写模式下，参照其包含块 <a href="../dimension/width.htm">width</a> 进行计算，其它情况参照 <a href="../dimension/height.htm">height</a> 。不允许负值</dd>
 			</dl>
 		</div>
 	</section>
@@ -74,7 +76,7 @@
 		<div class="cont">
 			<strong>检索或设置对象左边的内补白。</strong>
 			<ul>
-				<li>内联对象可以使用该属性设置左边内补白。</li>
+				<li>非替代(non-Replaced)行内元素可以使用该属性设置左边内补白。</li>
 				<li>对应的脚本特性为<strong>paddingLeft</strong>。</li>
 			</ul>
 		</div>
@@ -86,7 +88,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -101,12 +102,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="support">6</td>
-						<td class="support">4</td>
-						<td class="support">5.1.7</td>
-						<td class="support">13</td>
-						<td class="support">11.5</td>
+						<th>版本</th>
+						<td class="support">6.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">3.5</td>
 					</tr>
 				</tbody>
 			</table>

@@ -42,7 +42,7 @@
 		<h1 class="tit">border-top-width</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -56,6 +56,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">medium</mark></p>
 			<p><strong>适用于</strong>：所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：是</p>
+		    <p><strong>计算值</strong>：绝对长度值，如果border style设置为none或hidden，则计算值为0</p>
 			<p><strong>相关属性</strong>：[ <a href="border-width.htm">border-width</a> ] || [ <a href="border-right-width.htm">border-right-width</a> ] || [ <a href="border-bottom-width.htm">border-bottom-width</a> ] || [ <a href="border-left-width.htm">border-left-width</a> ]</p>
 		</div>
 	</section>
@@ -66,11 +68,11 @@
 				<dt><a href="../../values/other/length.htm">&lt;length&gt;</a>：</dt>
 				<dd>用长度值来定义边框的厚度。不允许负值</dd>
 				<dt>medium：</dt>
-				<dd>定义默认厚度的边框。</dd>
+				<dd>定义默认厚度的边框。计算值为3px</dd>
 				<dt>thin：</dt>
-				<dd>定义比默认厚度细的边框。</dd>
+				<dd>定义比默认厚度细的边框。计算值为1px</dd>
 				<dt>thick：</dt>
-				<dd>定义比默认厚度粗的边框。</dd>
+				<dd>定义比默认厚度粗的边框。计算值为5px</dd>
 			</dl>
 		</div>
 	</section>
@@ -79,7 +81,6 @@
 		<div class="cont">
 			<strong>设置或检索对象的顶部边框宽度。</strong>
 			<ul>
-				<li>如果<a href="border-style.htm">border-style</a>设置为none，本属性将失去作用。 </li>
 				<li>对应的脚本特性为<strong>borderTopWidth</strong>。</li>
 			</ul>
 		</div>
@@ -91,7 +92,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -106,12 +106,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="support">6</td>
-						<td class="support">4</td>
-						<td class="support">5.1.7</td>
-						<td class="support">13</td>
-						<td class="support">11.5</td>
+						<th>版本</th>
+						<td class="support">6.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">3.5</td>
 					</tr>
 				</tbody>
 			</table>

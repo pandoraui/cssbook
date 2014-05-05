@@ -42,7 +42,7 @@
 		<h1 class="tit">margin-right</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -51,10 +51,12 @@
 	<section id="syntax" class="g-mod g-attr">
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
-			<p><strong>margin-right</strong>：[ <a href="../../values/other/length.htm">&lt;length&gt;</a> | <a href="../../values/other/percentage.htm">&lt;percentage&gt;</a> | auto ]{1,4}</p>
-			<p><strong>默认值</strong>：<mark class="defaultvalue">	0</mark></p>
-			<p><strong>适用于</strong>：除某些table-*和内联元素之外的所有元素</p>
+			<p><strong>margin-right</strong>：<a href="../../values/other/length.htm">&lt;length&gt;</a> | <a href="../../values/other/percentage.htm">&lt;percentage&gt;</a> | auto</p>
+			<p><strong>默认值</strong>：<mark class="defaultvalue">0</mark></p>
+			<p><strong>适用于</strong>：所有元素，除非 table | inline-table | table-caption 的表格类元素之外</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：是</p>
+		    <p><strong>计算值</strong>：指定的百分比、绝对长度或auto</p>
 			<p><strong>相关属性</strong>：[ <a href="margin.htm">margin</a> ] || [ <a href="margin-top.htm">margin-top</a> ] || [ <a href="margin-bottom.htm">margin-bottom</a> ] || [ <a href="margin-left.htm">margin-left</a> ]</p>
 		</div>
 	</section>
@@ -63,11 +65,11 @@
 		<div class="cont">
 			<dl>
 				<dt>auto：</dt>
-				<dd>值被设置为相对边的值</dd>
+				<dd>水平（默认）书写模式下，其计算值取决于可用空间</dd>
 				<dt><a href="../../values/other/length.htm">&lt;length&gt;</a>：</dt>
 				<dd>用长度值来定义外补白。可以为负值</dd>
 				<dt><a href="../../values/other/percentage.htm">&lt;percentage&gt;</a>：</dt>
-				<dd>用百分比来定义外补白。可以为负值</dd>
+				<dd>用百分比来定义外补白。水平（默认）书写模式下，参照其包含块 <a href="../dimension/width.htm">width</a> 进行计算，其它情况参照 <a href="../dimension/height.htm">height</a> ，可以为负值</dd>
 			</dl>
 		</div>
 	</section>
@@ -76,7 +78,7 @@
 		<div class="cont">
 			<strong>检索或设置对象右边的外延边距。</strong>
 			<ul>
-				<li>内联对象可以使用该属性设置右边距。</li>
+				<li>所有行内元素均可使用该属性设置右边距。</li>
 				<li>外延边距始终透明。</li>
 				<li>对应的脚本特性为<strong>marginRight</strong>。</li>
 			</ul>
@@ -89,7 +91,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -104,12 +105,12 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="support">6</td>
-						<td class="support">4</td>
-						<td class="support">5.1.7</td>
-						<td class="support">13</td>
-						<td class="support">11.5</td>
+						<th>版本</th>
+						<td class="support">6.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">3.5</td>
 					</tr>
 				</tbody>
 			</table>

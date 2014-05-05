@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8" />
@@ -42,7 +42,7 @@
 		<h1 class="tit">overflow</h1>
 		<ul class="info">
 			<li><strong>版本：CSS2/3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -51,11 +51,13 @@
 	<section id="syntax" class="g-mod g-attr">
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
-			<p><strong>overflow</strong>：<a href="#dfn-syntax">&lt;overflow-style&gt;</a>{1<ins class="css3-value g-color-css3-new">,2</ins>}</p>
-			<p id="dfn-syntax"><strong>&lt;overflow-style&gt;</strong> = visible | hidden | scroll | auto | <ins class="css3-value g-color-css3-new">no-display</ins> | <ins class="css3-value g-color-css3-new">no-content</ins></p>
+			<p><strong>overflow</strong>：<a href="#dfn-syntax">&lt;overflow-style&gt;</a></p>
+			<p id="dfn-syntax"><strong>&lt;overflow-style&gt;</strong> = <mark class="defaultvalue">visible</mark> | hidden | scroll | auto | <ins class="css3-value g-color-css3-new">paged-x</ins> | <ins class="css3-value g-color-css3-new">paged-y</ins> | <ins class="css3-value g-color-css3-new">paged-x-controls</ins> | <ins class="css3-value g-color-css3-new">paged-y-controls</ins> | <ins class="css3-value g-color-css3-new">fragments</ins></p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">visible</mark></p>
-			<p><strong>适用于</strong>：非置换块元素和非置换内联块元素</p>
+			<p><strong>适用于</strong>：块容器，伸缩盒容器，grid容器</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -63,17 +65,23 @@
 		<div class="cont">
 			<dl>
 				<dt>visible：</dt>
-				<dd>不剪切内容。</dd>
+				<dd>对溢出内容不做处理，内容可能会超出容器。</dd>
 				<dt>hidden：</dt>
-				<dd>将超出对象尺寸的内容进行裁剪，将不出现滚动条。</dd>
+				<dd>隐藏溢出容器的内容且不出现滚动条。</dd>
 				<dt>scroll：</dt>
-				<dd>将超出对象尺寸的内容进行裁剪，并以滚动条的方式显示超出的内容。</dd>
+				<dd>隐藏溢出容器的内容，溢出的内容将以卷动滚动条的方式呈现。</dd>
 				<dt>auto：</dt>
-				<dd>在需要时剪切内容并添加滚动条，此为body对象和textarea的默认值。</dd>
-				<dt class="css3-value g-color-css3-new">no-display：</dt>
-				<dd>当内容不适合当前内容盒子时，整个盒子将被移除，类似<a href="display.htm">display</a>:none。（CSS3）</dd>
-				<dt class="css3-value g-color-css3-new">no-content：</dt>
-				<dd>当内容不适合当前内容盒子时，整个内容被隐藏，类似<a href="visibility.htm">visibility</a>:hidden。（CSS3）</dd>
+				<dd>当内容没有溢出容器时不出现滚动条，当内容溢出容器时出现滚动条，按需出现滚动条。此为body对象和textarea的默认值。</dd>
+				<dt class="css3-value g-color-css3-new">paged-x：</dt>
+				<dd>TODO...（CSS3）</dd>
+				<dt class="css3-value g-color-css3-new">paged-y：</dt>
+				<dd>TODO...（CSS3）</dd>
+				<dt class="css3-value g-color-css3-new">paged-x-controls：</dt>
+				<dd>TODO...（CSS3）</dd>
+				<dt class="css3-value g-color-css3-new">paged-y-controls：</dt>
+				<dd>TODO...（CSS3）</dd>
+				<dt class="css3-value g-color-css3-new">fragments：</dt>
+				<dd>TODO...（CSS3）</dd>
 			</dl>
 		</div>
 		<div class="related">
@@ -83,10 +91,9 @@
 	<section id="intro" class="g-mod g-attr">
 		<h2 class="tit">说明：</h2>
 		<div class="cont">
-			<strong>复合属性。检索或设置当对象的内容超过其指定高度及宽度时如何管理内容。</strong>参阅<a href="overflow-x.htm">overflow-x</a>、<a href="overflow-y.htm">overflow-y</a>属性
+			<strong>复合属性。检索或设置对象处理溢出内容的方式。</strong>参阅<a href="overflow-x.htm">overflow-x</a>、<a href="overflow-y.htm">overflow-y</a>属性
 			<ul>
-				<li>如果只提供一个，其作用等同于<a href="overflow-x.htm">overflow-x</a> + <a href="overflow-y.htm">overflow-y</a>。</li>
-				<li>如果提供两个，第一个等同于<a href="overflow-x.htm">overflow-x</a>，第二个等同于<a href="overflow-y.htm">overflow-y</a>。</li>
+				<li>overflow的效果等同于<a href="overflow-x.htm">overflow-x</a> + <a href="overflow-y.htm">overflow-y</a>。</li>
 				<li>对于table来说，假如<a href="../table/table-layout.htm">table-layout</a>属性设置为fixed，则td对象支持带有默认值为hidden的overflow属性。如果设为hidden，scroll或者auto，那么超出td尺寸的内容将被剪切。如果设为visible，将导致额外的文本溢出到右边或左边（视direction属性设置而定）的单元格。</li>
 				<li>对应的脚本特性为<strong>overflow</strong>。</li>
 			</ul>
@@ -99,7 +106,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -114,17 +120,17 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="partsupport">6-10 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">4-18 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">5.1.7 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">13-25 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">11.5-12.5 <sup><a href="#support1">#1</a></sup></td>
+						<th>版本</th>
+						<td class="partsupport">6.0-11.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="partsupport">1.0-25.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="partsupport">1.0-5.1.7 <sup><a href="#support1">#1</a></sup></td>
+						<td class="partsupport">1.0-31.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="partsupport">7.0-18.0 <sup><a href="#support1">#1</a></sup></td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">不支持：<ins class="css3-value g-color-css3-new">no-display</ins> | <ins class="css3-value g-color-css3-new">no-content</ins> 属性值，不支持同时设置2个值的情形。</li>
+				<li id="support1">不支持：<ins class="css3-value g-color-css3-new">paged-x</ins> | <ins class="css3-value g-color-css3-new">paged-y</ins> | <ins class="css3-value g-color-css3-new">paged-x-controls</ins> | <ins class="css3-value g-color-css3-new">paged-y-controls</ins> | <ins class="css3-value g-color-css3-new">fragments</ins>。</li>
 			</ol>
 		</div>
 	</section>

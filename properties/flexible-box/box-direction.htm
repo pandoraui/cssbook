@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <title>box-direction</title>
-<meta name="description" content="CSS3参考手册弹性盒模型之: box-direction" />
-<meta name="keywords" content="box-direction, flexbox, 弹性盒模型, css3, css3参考手册" />
+<meta name="description" content="CSS3参考手册伸缩盒之: box-direction" />
+<meta name="keywords" content="box-direction, flexbox, 伸缩盒, css3, css3参考手册" />
 <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
 <meta name="robots" content="all" />
 <!--[if lte IE 8]>
@@ -19,7 +19,7 @@
 		<span>&#187;</span>
 		<a href="../index.htm">属性列表</a>
 		<span>&#187;</span>
-		<a href="index.htm" id="category" rel="properties/flexible-box" name="box-direction">弹性盒模型属性</a>
+		<a href="index.htm" id="category" rel="properties/flexible-box" name="box-direction">伸缩盒属性</a>
 		<span>&#187;</span>
 	</div>
 	<div class="to">
@@ -42,7 +42,7 @@
 		<h1 class="tit">box-direction</h1>
 		<ul class="info">
 			<li><strong>版本：CSS3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -53,8 +53,10 @@
 		<div class="cont">
 			<p><strong>box-direction</strong>：normal | reverse</p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">normal</mark></p>
-			<p><strong>适用于</strong>：弹性盒模型容器</p>
+			<p><strong>适用于</strong>：伸缩盒容器</p>
 		    <p><strong>继承性</strong>：无</p>
+			<p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -62,17 +64,21 @@
 		<div class="cont">
 			<dl>
 				<dt>normal：</dt>
-				<dd>设置弹性盒模型对象的子元素按正常顺序排列</dd>
+				<dd>设置伸缩盒对象的子元素按正常顺序排列</dd>
 				<dt>reverse：</dt>
-				<dd>反转弹性盒模型对象的子元素的排列顺序</dd>
+				<dd>反转伸缩盒对象的子元素的排列顺序</dd>
 			</dl>
 		</div>
 	</section>
 	<section id="intro" class="g-mod g-attr">
 		<h2 class="tit">说明：</h2>
 		<div class="cont">
-			<strong>设置或检索弹性盒模型对象的子元素的排列顺序是否反转。</strong>
+			<strong>设置或检索伸缩盒对象的子元素的排列顺序是否反转。</strong>
 			<ul>
+				<li>可以通过box-orient:horizontal + box-direction:normal 达到新版本 flex-direction:row 的效果；</li>
+				<li>可以通过box-orient:horizontal + box-direction:reverse 达到新版本 flex-direction:row-reverse 的效果；</li>
+				<li>可以通过box-orient:vertical + box-direction:normal 达到新版本 flex-direction:column 的效果；</li>
+				<li>可以通过box-orient:horizontal + box-direction:reverse 达到新版本 flex-direction:column-reverse 的效果；</li>
 				<li>Firefox设置box-direction为reverse时，在将元素的排列顺序反转的同时也将元素的对齐方式逆转了；Safari和Chrome则只是反转元素排列顺序</li>
 				<li>对应的脚本特性为<strong>boxDirection</strong>。</li>
 			</ul>
@@ -85,7 +91,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -101,15 +106,15 @@
 				<tbody>
 					<tr>
 						<th>较早版本</th>
-						<td class="unsupport">6-9</td>
-						<td class="experimentsupport" rowspan="2">4-18</sup></td>
-						<td class="experimentsupport" rowspan="2">5.1.7</td>
-						<td class="experimentsupport" rowspan="2">13-23</td>
-						<td class="unsupport" rowspan="2">11.50-12.5</td>
+						<td class="unsupport" rowspan="2">6.0-11.0</td>
+						<td class="support" rowspan="2">4.0.-25.0 <sup class="fix">-moz-</sup></td>
+						<td class="support" rowspan="2">5.1.7 <sup class="fix">-webkit-</sup></td>
+						<td class="support" rowspan="2">4.0-31.0 <sup class="fix">-webkit-</sup></td>
+						<td class="unsupport">9.5-14.0</td>
 					</tr>
 					<tr>
 						<th>较新版本</th>
-						<td class="experimentsupport">10</td>
+						<td class="support">15.0-18.0 <sup class="fix">-webkit-</sup></td>
 					</tr>
 				</tbody>
 			</table>
@@ -127,13 +132,13 @@
 <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
 <style>
 h1{font:bold 20px/1.5 georgia,simsun,sans-serif;}
-.box{display:-webkit-box;display:-moz-box;display:-o-box;display:-ms-box;display:box;background:#000;width:240px;height:100px;margin:0;padding:10px;list-style:none;vertical-align:top;}
+.box{display:-webkit-box;display:-moz-box;display:-ms-box;background:#000;width:240px;height:100px;margin:0;padding:10px;list-style:none;vertical-align:top;}
 .box li{width:60px;}
 .box li:nth-child(1){background:#666;}
 .box li:nth-child(2){background:#999;}
 .box li:nth-child(3){background:#ccc;}
-#box{-webkit-box-direction:normal;-moz-box-direction:normal;-o-box-direction:normal;-ms-box-direction:normal;box-direction:normal;}
-#box2{-webkit-box-direction:reverse;-moz-box-direction:reverse;-o-box-direction:reverse;-ms-box-direction:reverse;box-direction:reverse;}
+#box{-webkit-box-direction:normal;-moz-box-direction:normal;-ms-box-direction:normal;}
+#box2{-webkit-box-direction:reverse;-moz-box-direction:reverse;-ms-box-direction:reverse;}
 </style>
 </head>
 <body>

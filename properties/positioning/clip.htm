@@ -42,7 +42,7 @@
 		<h1 class="tit">clip</h1>
 		<ul class="info">
 			<li><strong>版本：CSS2/3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -51,11 +51,13 @@
 	<section id="syntax" class="g-mod g-attr">
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
-			<p><strong>clip</strong>：auto | <a href="#dfn-syntax">&lt;shape&gt;</a></p>
+			<p><strong>clip</strong>：<mark class="defaultvalue">auto</mark> | <a href="#dfn-syntax">&lt;shape&gt;</a></p>
 			<p id="dfn-syntax"><strong>&lt;shape&gt;</strong>：rect(<a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto) | <ins class="css3-value g-color-css3-new">inset(<a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto)</ins></p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">auto</mark></p>
 			<p><strong>适用于</strong>：绝对定位元素</p>
             <p><strong>继承性</strong>：无</p>
+            <p><strong>动画性</strong>：当值为<a href="#dfn-syntax">&lt;shape&gt;</a>时</p>
+		    <p><strong>计算值</strong>：指定的值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -70,7 +72,7 @@
 				<dd>右-下 方位的裁剪：从设定值开始剪裁直到最右边和最下边，即 右-下 方位的auto值为盒子的实际宽度和高度；</dd>
 				<dd>
 					<p>示例：clip:rect(auto 50px 20px auto)</p>
-					<p>说明：上边不剪切，右边从第50个像素开始剪切直至最右边，下边从第20个像素开始剪切直至最底部，左边不剪切</p>
+					<p>说明：上边不剪切，右边从左起第50个像素开始剪切直至最右边，下边从上起第20个像素开始剪切直至最底部，左边不剪切</p>
 				</dd>
 				<dt class="g-color-css3-new">inset(<a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto <a href="../../values/numeric/number.htm">&lt;number&gt;</a>|auto)：</dt>
 				<dd>该剪裁方式与 rect() 类似，不同的是 inset() 的剪裁，每个方位都是参照该方位的边界来进行裁剪的。</dd>
@@ -98,7 +100,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -113,16 +114,16 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="partsupport">6 <sup><a href="#support1">#1</a></sup></td>
-						<td rowspan="2" class="partsupport">4-18 <sup><a href="#support2">#2</a></sup></td>
-						<td rowspan="2" class="partsupport">5.1.7 <sup><a href="#support2">#2</a></td>
-						<td rowspan="2" class="partsupport">13-25 <sup><a href="#support2">#2</a></td>
-						<td rowspan="2" class="partsupport">11.50-12.5 <sup><a href="#support2">#2</a></td>
+						<th>版本</th>
+						<td class="partsupport">6.0-7.0 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
+						<td rowspan="2" class="partsupport">1.0-25.0 <sup><a href="#support2">#2</a></sup></td>
+						<td rowspan="2" class="partsupport">1.0-5.1.7 <sup><a href="#support2">#2</a></td>
+						<td rowspan="2" class="partsupport">1.0-31.0 <sup><a href="#support2">#2</a></td>
+						<td rowspan="2" class="partsupport">7.0-18.0 <sup><a href="#support2">#2</a></td>
 					</tr>
 					<tr>
-						<th>较新版本</th>
-						<td class="partsupport">7-10 <a href="#support2">#2</a></td>
+						<th>版本</th>
+						<td class="partsupport">8.0-11.0 <a href="#support2">#2</a></td>
 					</tr>
 				</tbody>
 			</table>

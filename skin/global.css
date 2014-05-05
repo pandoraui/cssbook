@@ -5,7 +5,7 @@
 *Author Joy Du
 *Reset
 */
-body{background:#FFF;color:#3D464B;font:13px/1.7 verdana,\5b8b\4f53,arial,georgia,helvetica,sans-serif;}
+body{background:#FFF;color:#3D464B;font:13px/1.7 verdana,'\5b8b\4f53',arial,georgia,helvetica,sans-serif;}
 html,body,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
 ul,ol{list-style:none;}
@@ -19,10 +19,10 @@ ins{text-decoration:none;}
 html,body{height:100%;}
 #wrapper{height:100%;-webkit-overflow-scrolling:touch;overflow:auto;}
 /* Comm */
-::selection{background-color:#333369;color:#FFF;}
-::-moz-selection{background-color:#333369;color:#FFF;}
-.g-clear:after,#guide:after,#hd:after,#bd:after,#ft:after,.g-mod:after{display:block;clear:both;visibility:hidden;height:0;content:'';}
-.g-clear,#guide,#hd,#bd,#ft,.g-mod{zoom:1;}
+::selection{background-color:#f60;color:#FFF;}
+::-moz-selection{background-color:#f60;color:#FFF;}
+.g-clear:after,#guide:after,#hd:after,#bd:after,#ft:after,.hd:after,.bd:after,.ft:after,.g-mod:after{display:block;clear:both;visibility:hidden;height:0;content:'';}
+.g-clear,#guide,#hd,#bd,#ft,.hd,.bd,.ft,.g-mod{zoom:1;}
 a{color:#008000;text-decoration:none;cursor:pointer;}
 a:hover{color:#C30;text-decoration:underline;}
 .g-mod{margin-top:10px;}
@@ -118,4 +118,4 @@ a:hover{color:#C30;text-decoration:underline;}
 .g-combobox:hover .target span ins,.g-combobox .on span ins{top:4px;border-color:transparent transparent #efefef;border-style:dashed dashed solid;}
 .g-combobox:hover .list,.g-combobox.on .list{display:block;opacity:1;}
 /* comm: g-transition */
-.g-transition{-webkit-transition:all .5s ease-in;-moz-transition:all .5s ease-in-out;-o-transition:all .5s ease-in;transition:all .5s ease-in;}
+.g-transition{border-color:#f60 transparent transparent;}

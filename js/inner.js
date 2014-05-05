@@ -90,6 +90,7 @@ Global.getRel = function(id){
 	Global.url = 'http://pandoraui.github.io/cssbook/' + Global.rel + '/' + Global.name + '.htm';
 }('#category');
 
+//复制函数
 Global.copy = function(content,isAlertContent){
 	//判断浏览器,目前仅支持IE
     if(window.clipboardData) {
@@ -97,10 +98,8 @@ Global.copy = function(content,isAlertContent){
 	    alert('复制成功!');
     }else{
     	var tip = "你的浏览器不支持此功能,请手动进行复制。";
-
     	// 如果带入了isAlertContent参数，火狐无法复制时，弹出的tip包含content。
-    	tip = isAlertContent ? tip+'链接地址为：'+content : tip;
-	    alert(tip);
+    	if(isAlertContent){prompt(tip+'链接地址为：',content)}else{alert(tip)}
     }
 };
 
@@ -122,6 +121,7 @@ Global.copy = function(content,isAlertContent){
 			'index' : ['速查表快速通道','速查表快速通道'],
 			introduction : {
 				'index' : ['简介','其他简介条目'],
+				'change-list' : ['更新历史'],
 				'about-this-handbook' : ['关于本手册'],
 				'what-is-css' : ['关于样式表'],
 				'about-me' : ['关于作者'],
@@ -150,9 +150,9 @@ Global.copy = function(content,isAlertContent){
 					'visibility' : [],
 					'overflow' : [],
 					'overflow-x' : [],
-					'overflow-y' : [],
-					'rotation' : [],
-					'rotation-point' : []
+					'overflow-y' : []
+					//'rotation' : [],
+					//'rotation-point' : []
 				},
 				dimension : {
 					'index' : ['尺寸(Ddimension)','其它尺寸属性参考'],
@@ -248,6 +248,7 @@ Global.copy = function(content,isAlertContent){
 					'tab-size' : [],
 					'word-break' : [],
 					'word-wrap' : [],
+					'overflow-wrap' : [],
 					'text-align' : [],
 					'text-align-last' : [],
 					'text-justify' : [],
@@ -328,7 +329,7 @@ Global.copy = function(content,isAlertContent){
 					'columns-break-inside' : []
 				},
 				'flexible-box' : {
-					'index' : ['弹性盒模型(Flexible Box)','其它弹性盒模型属性'],
+					'index' : ['弹性盒模型(Flexible Box)(旧)','其它弹性盒模型属性'],
 					'box-orient' : [],
 					'box-pack' : [],
 					'box-align' : [],
@@ -337,6 +338,21 @@ Global.copy = function(content,isAlertContent){
 					'box-ordinal-group' : [],
 					'box-direction' : [],
 					'box-lines' : []
+				},
+				'flex' : {
+					'index' : ['弹性盒模型(Flexible Box)(新)','其它弹性盒模型属性'],
+					'flex' : [],
+					'flex-basis' : [],
+					'flex-direction' : [],
+					'flex-flow' : [],
+					'flex-grow' : [],
+					'flex-shrink' : [],
+					'flex-wrap' : [],
+					'align-contnet' : [],
+					'align-items' : [],
+					'align-self' : [],
+					'justify-content' : [],
+					'order' : []
 				},
 				'transform' : {
 					'index' : ['变换(Transform)','其它变换属性参考'],
@@ -662,9 +678,102 @@ Global.copy = function(content,isAlertContent){
 })();
 
 /*
+ * 404页面随机数据
+ */
+(function(){
+	var data = [
+		{
+			name : '陈思桥',
+			sex : '男',
+			birth : '1991年6月',
+			date : '2000年8月21日',
+			local : '广西贵港市郁江大桥下',
+			info : '失踪时只有9岁，身高140厘米，单眼皮，下颌处有一块跌跤缝针疤痕，前额上有个小漩涡...',
+			photo : 'http://qzonestyle.gtimg.cn/qzone_v6/lostchild/images/chensiqiao.jpg',
+			detail : 'http://bbs.baobeihuijia.com/thread-46886-1-1.html'
+		},
+		{
+			name : '尹思源',
+			sex : '女',
+			birth : '1993年01月25日',
+			date : '2000年07月05日',
+			local : '吉林省辽源市东辽县金岗镇原西柳九井102宿舍',
+			info : '短发，小眼睛，单眼皮，一个头旋,左胳膊有一块大拇指甲大的青色胎记...',
+			photo : 'http://qzonestyle.gtimg.cn/qzone_v6/lostchild/images/yinsiyuan.jpg',
+			detail : 'http://bbs.baobeihuijia.com/thread-129469-1-1.html'
+		},
+		{
+			name : '杨依林',
+			sex : '女',
+			birth : '2003年9月20日',
+			date : '2007年11月23日',
+			local : '河南省郸城县宜路镇于李庄村',
+			info : '河南东部口音；单眼皮，嘴唇下面磕了一个小疤，右脚大脚趾坐自行车的时候绊了一个疤；失踪时上穿蓝袄,下穿...',
+			photo : 'http://qzonestyle.gtimg.cn/qzone_v6/lostchild/images/yangyilin.jpg',
+			detail : 'http://bbs.baobeihuijia.com/thread-129468-1-1.html'
+		}
+	];
+	var getRandomNum = function(start,end){
+		return Math.round(start + Math.random()*(end - start));
+	};
+	var getData = function(num){
+
+		//异常处理
+		if(data.length < num || !num){return false;}
+
+		else{return data[num-1];}
+	};
+	var drawHtml = function(data){
+		var found = $('#found');
+
+		//异常处理
+		if(!data){return false;}
+
+		found.find('dd[type=name]').html(data['name']);
+		found.find('dd[type=sex]').html(data['sex']);
+		found.find('dd[type=birth]').html(data['birth']);
+		found.find('dd[type=date]').html(data['date']);
+		found.find('dd[type=local]').html(data['local']);
+		found.find('span[type=info]').html(data['info']);
+		found.find('img[type=photo]').attr('src',data['photo']).attr('title',data['name']).attr('alt',data['name']);
+		found.find('a[type=detail]').attr('href',data['detail']);
+	};
+
+	var init = function(){
+		var found = $('#found'),
+			trans = $('#trans');
+
+		//异常处理
+		if(!found.length||!trans.length){return false};
+
+		//只在iframe层显示找小孩的那个页面。跳转过程中显示
+		if(window == window.top){return false;}
+
+		//显示找小孩的页面
+		found.show();
+		trans.hide();
+
+		//取得随机数
+		var num = getRandomNum(1,3);
+
+		//根据数值取得知识库中固定的某条数据
+		var data = getData(num);
+
+		//绘制404页面
+		drawHtml(data);
+	}();
+})();
+
+/*
  * 页面内的小功能
  */
 (function(){
+	//得到UA和浏览器版本
+	var UA = navigator.userAgent,
+		isWin7 = UA.match(/Windows NT 6.1/),
+		isiPad = UA.match(/iPad/),
+		isiPhone = UA.match(/iPhone/),
+		isiPod = UA.match(/iPod/);
 
 	//给所有页面增加一些通用的模块，如执行环境，如copyright等。
 	var creatCommonMod = function (){
@@ -674,14 +783,14 @@ Global.copy = function(content,isAlertContent){
 			'<ul>'+
 				'<li><a href="http://www.doyoe.com/suggestion/?sid=css" target="_blank" rel="external" class="external">提交问题</a></li>'+
 			'</ul>'+
-			'<p>说明：本文档兼容性测试基础环境为：windows系统；IE6-10, Firefox4-17, Chrome16-23, Win Safari5.1.7, Opera11.5-12.5</p>'+
+			'<p>说明：本文档兼容性测试基础环境为：windows系统；IE6-10, Firefox4-25, Chrome4-31, Win Safari5.1.7, Opera9.5-18</p>'+
 		'</div>';
 
 		$('#title').append(testBrowser);
 		$('#rights').append(testBrowser);
 
 		//在页面的的最后增加copyright模块
-		var copyright = '<p class="copyright">Copyright © 2006-2012 <a href="http://www.doyoe.com/" rel="external" target="_blank">Doyoe</a>. All Rights Reserved</p>'
+		var copyright = '<p class="copyright">Copyright © 2006-2014 <a href="http://www.doyoe.com/" rel="external" target="_blank">Doyoe</a>. All Rights Reserved</p>'
 		$('#rights').append(copyright);
 
 		//在页面的标题后面添加分享功能模块,复制链接等
@@ -754,17 +863,11 @@ Global.copy = function(content,isAlertContent){
 			window.open('http://www.douban.com/recommend/?title=' + title + '&url=' + url, '_blank');
 			return false;
 		});
-
-
 	}();
-	var UA = navigator.userAgent,
-		isWin7 = UA.match(/Windows NT 6.1/);
-
 
 	//ipad 滚动条失效，将每个页面外层包裹一层。
 	var forIOS = function(){
-
-		if(!UA.match(/iPad/) && !UA.match(/iPhone/) && !UA.match(/iPod/)){return;}
+		if(!isiPad && !isiPhone && !isiPod){return;}
 		if($('#wrapper').length){return;}
 		$('body').children().not('script').wrapAll('<div id="wrapper"></div>');
 	}();
@@ -814,7 +917,6 @@ Global.copy = function(content,isAlertContent){
 
 	//为自己和外层添加展开收起的折叠效果
 	Global.folding($('.g-combobox'));
-
 })();
 
 

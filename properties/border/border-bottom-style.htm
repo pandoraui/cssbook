@@ -42,7 +42,7 @@
 		<h1 class="tit">border-bottom-style</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -56,6 +56,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">none</mark></p>
 			<p><strong>适用于</strong>：所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定值</p>
 			<p><strong>相关属性</strong>：[ <a href="border-style.htm">border-style</a> ] || [ <a href="border-top-style.htm">border-top-style</a> ] || [ <a href="border-right-style.htm">border-right-style</a> ] || [ <a href="border-left-style.htm">border-left-style</a> ]</p>
 		</div>
 	</section>
@@ -64,7 +66,7 @@
 		<div class="cont">
 			<dl>
 				<dt>none：</dt>
-				<dd>无轮廓。<a href="border-color.htm">border-color</a>与<a href="border-width.htm">border-width</a>将被忽略</dd>
+				<dd>无轮廓。<a href="border-color.htm">border-color</a>将被忽略，<a href="border-width.htm">border-width</a>计算值为0，除非边框轮廓为图像，即<a href="border-image.htm">border-image</a>。</dd>
 				<dt>hidden：</dt>
 				<dd>隐藏边框。<em class="g-color-light">IE7及以下尚不支持</em></dd>
 				<dt>dotted：</dt>
@@ -103,7 +105,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -118,26 +119,26 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="partsupport">6 <sup><a href="#support1">#1</a></sup></td>
-						<td rowspan="3" class="support">4</td>
-						<td rowspan="3" class="support">5.1.7</td>
-						<td rowspan="3" class="support">13</td>
-						<td rowspan="3" class="support">11.5</td>
+						<th>版本</th>
+						<td class="partsupport">6.0 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
+						<td rowspan="3" class="support">1.0</td>
+						<td rowspan="3" class="support">1.0</td>
+						<td rowspan="3" class="support">1.0</td>
+						<td rowspan="3" class="support">3.5</td>
 					</tr>
 					<tr>
-						<th>较新版本</th>
-						<td class="partsupport">7 <sup><a href="#support2">#2</a></sup></td>
+						<th>版本</th>
+						<td class="partsupport">7 <sup><a href="#support1">#1</a></sup></td>
 					</tr>
 					<tr>
-						<th>最近版本</th>
+						<th>版本</th>
 						<td class="support">8</td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">IE6及更早浏览器不支持hidden属性值，且会将dotted属性值显示为dashed的效果。</li>
-				<li id="support2">IE7及更早浏览器不支持hidden属性值。</li>
+				<li id="support1">不支持hidden属性值。</li>
+				<li id="support2">dotted属性值显示为dashed的效果。</li>
 			</ol>
 		</div>
 	</section>

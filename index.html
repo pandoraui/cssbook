@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8" />
-<title>CSS参考手册v4.0_web前端开发参考手册系列</title>
+<title>CSS参考手册_web前端开发参考手册系列</title>
 <meta name="description" content="web前端开发参考手册系列之CSS3参考手册：为Web前端开发人员提供最新、最全的CSS资料，涵盖CSS3.0。" />
 <meta name="keywords" content="css,css3,css手册,css3手册,css参考,css3参考,css参考手册,css3参考手册,web前端开发指南" />
 <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
@@ -25,8 +25,8 @@
 		<nav class="related">
 			<ul class="nav">
                 <li><a href="https://github.com/pandoraui/cssbook">GitHub Pro</a></li>
-				<li class="version">当前版本：v4.0.1</li>
-				<li class="download"><a href="css-v4.0.1.chm" class="g-ico g-ico-download">下载最新chm版</a></li>
+				<li class="version">当前版本：v4.1.3</li>
+				<li class="download"><a href="css-v4.1.3.chm" class="g-ico g-ico-download">下载最新chm版</a></li>
 				<li class="resource">
 					<div class="g-combobox">
 						<a href="?" class="g-transition target">
@@ -80,12 +80,13 @@
 						<li>
 							<div class="haschild"><a href="introduction/index.htm">简介 Introduction</a></div>
 							<ul>
+								<li><div><a href="introduction/change-list.htm">更新历史 Change List</a></div></li>
 								<li><div><a href="introduction/about-this-handbook.htm">关于本手册 About This Handbook</a></div></li>
 								<li><div><a href="introduction/what-is-css.htm">关于样式表 Introduction To CSS</a></div></li>
 								<li><div><a href="introduction/about-me.htm">关于作者 About Me</a></div></li>
 								<li><div><a href="introduction/guide.htm">阅读及使用指引 The Use Guides</a></div></li>
 								<li><div><a href="introduction/thanks.htm">鸣谢 Thanks</a></div></li>
-								<li><div><a href="introduction/contribute.htm">捐赠 Contribute</a></div></li>
+								<li><div><a href="introduction/contribute.htm">捐赠 Donated</a></div></li>
 							</ul>
 						</li>
 						<li>
@@ -104,8 +105,8 @@
 									</ul>
 								</li>
 								<li>
-									<div class="haschild open"><a href="properties/layout/index.htm">布局(Layout)</a></div>
-									<ul class="unfold">
+									<div class="haschild"><a href="properties/layout/index.htm">布局(Layout)</a></div>
+									<ul>
 										<li><div class="css3-change"><a href="properties/layout/display.htm">display</a></div></li>
 										<li><div><a href="properties/layout/float.htm">float</a></div></li>
 										<li><div><a href="properties/layout/clear.htm">clear</a></div></li>
@@ -113,14 +114,15 @@
 										<li><div class="css3-change"><a href="properties/layout/overflow.htm">overflow</a></div></li>
 										<li><div class="css3-change"><a href="properties/layout/overflow-x.htm">overflow-x</a></div></li>
 										<li><div class="css3-change"><a href="properties/layout/overflow-y.htm">overflow-y</a></div></li>
+										<!--暂时关闭
 										<li><div class="css3-new"><a href="properties/layout/rotation.htm">rotation</a></div></li>
-										<li><div class="css3-new"><a href="properties/layout/rotation-point.htm">rotation-point</a></div></li>
+										<li><div class="css3-new"><a href="properties/layout/rotation-point.htm">rotation-point</a></div></li>-->
 									</ul>
 								</li>
 
 								<li>
-									<div class="haschild open"><a href="properties/dimension/index.htm">尺寸(Dimension)</a></div>
-									<ul class="unfold">
+									<div class="haschild"><a href="properties/dimension/index.htm">尺寸(Dimension)</a></div>
+									<ul>
 										<li><div><a href="properties/dimension/width.htm">width</a></div></li>
 										<li><div><a href="properties/dimension/min-width.htm">min-width</a></div></li>
 										<li><div><a href="properties/dimension/max-width.htm">max-width</a></div></li>
@@ -257,7 +259,7 @@
 										<li><div class="css3-new"><a href="properties/text/word-break.htm">word-break</a></div></li>
 										<!--<li><div class="css3-new"><a href="properties/text/hyphens.htm">hyphens</a></div></li>-->
 										<li><div class="css3-new"><a href="properties/text/word-wrap.htm">word-wrap</a></div></li>
-										<!--<li><div class="css3-new"><a href="properties/text/overflow-wrap.htm">overflow-wrap</a></div></li>-->
+										<li><div class="css3-new"><a href="properties/text/overflow-wrap.htm">overflow-wrap</a></div></li>
 										<li><div class="css3-change"><a href="properties/text/text-align.htm">text-align</a></div></li>
 										<li><div class="css3-new"><a href="properties/text/text-align-last.htm">text-align-last</a></div></li>
 										<li><div class="css3-new"><a href="properties/text/text-justify.htm">text-justify</a></div></li>
@@ -345,6 +347,7 @@
 										<li><div class="css3-new"><a href="properties/user-interface/box-sizing.htm">box-sizing</a></div></li>
 										<li><div class="css3-new"><a href="properties/user-interface/resize.htm">resize</a></div></li>
 										<li><div class="css3-new"><a href="properties/user-interface/ime-mode.htm">ime-mode</a></div></li>
+										<li><div class="css3-new"><a href="properties/user-interface/user-select.htm">user-select</a></div></li>
 									</ul>
 								</li>
 								<li>
@@ -366,7 +369,7 @@
 									</ul>
 								</li>
 								<li>
-									<div class="haschild"><a href="properties/flexible-box/index.htm">弹性盒模型(Flexible Box)(旧)</a></div>
+									<div class="haschild"><a href="properties/flexible-box/index.htm">伸缩盒(Flexible Box)(旧)</a></div>
 									<ul>
 										<li><div class="css3-new"><a href="properties/flexible-box/box-orient.htm">box-orient</a></div></li>
 										<li><div class="css3-new"><a href="properties/flexible-box/box-pack.htm">box-pack</a></div></li>
@@ -376,6 +379,23 @@
 										<li><div class="css3-new"><a href="properties/flexible-box/box-ordinal-group.htm">box-ordinal-group</a></div></li>
 										<li><div class="css3-new"><a href="properties/flexible-box/box-direction.htm">box-direction</a></div></li>
 										<li><div class="css3-new"><a href="properties/flexible-box/box-lines.htm">box-lines</a></div></li>
+									</ul>
+								</li>
+								<li>
+									<div class="haschild"><a href="properties/flex/index.htm">伸缩盒(Flexible Box)(新)</a></div>
+									<ul>
+										<li><div class="css3-new"><a href="properties/flex/flex.htm">flex</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-grow.htm">flex-grow</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-shrink.htm">flex-shrink</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-basis.htm">flex-basis</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-flow.htm">flex-flow</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-direction.htm">flex-direction</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/flex-wrap.htm">flex-wrap</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/align-content.htm">align-content</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/align-items.htm">align-items</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/align-self.htm">align-self</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/justify-content.htm">justify-content</a></div></li>
+										<li><div class="css3-new"><a href="properties/flex/order.htm">order</a></div></li>
 									</ul>
 								</li>
 								<!--<li>
@@ -762,7 +782,7 @@
 </section>
 <footer id="ft">
 	<aside id="about" class="g-mod">
-		<p class="copyright">&copy; Copyright <a href="http://www.doyoe.com/" title="飘雨社区">Doyoe</a> 2006-2012</p>
+		<p class="copyright">&copy; Copyright <a href="http://www.doyoe.com/" title="飘雨社区">Doyoe</a> 2006-2014</p>
 		<p class="related">为CSS参考手册<a id="offer2" class="offer" href="introduction/contribute.htm" title="CSS参考手册感谢有你">捐赠</a>您的一份力量</p>
 	</aside>
 </footer>
@@ -775,7 +795,7 @@
 			</header>
 			<section class="g-popup-bd">
 				<ul>
-					<li><strong>支付宝：</strong>dooyoe@gmail.com</li>
+					<li><strong>支付宝：</strong><a href="https://me.alipay.com/doyoe" target="_blank">dooyoe@gmail.com</a></li>
 					<li><strong>财付通：</strong>104589226</li>
 					<li><strong>姓　名：</strong>杜瑶</li>
 					<li><strong>备　注：</strong>捐赠金额不限</li>

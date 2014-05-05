@@ -42,7 +42,7 @@
 		<h1 class="tit">border-right-color</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -55,6 +55,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">采用文本颜色</mark></p>
 			<p><strong>适用于</strong>：所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：是</p>
+		    <p><strong>计算值</strong>：指定值</p>
 			<p><strong>相关属性</strong>：[ <a href="border-color.htm">border-color</a> ] || [ <a href="border-top-color.htm">border-top-color</a> ] || [ <a href="border-bottom-color.htm">border-bottom-color</a> ] || [ <a href="border-left-color.htm">border-left-color</a> ]</p>
 		</div>
 	</section>
@@ -70,7 +72,7 @@
 	<section id="intro" class="g-mod g-attr">
 		<h2 class="tit">说明：</h2>
 		<div class="cont">
-			<strong>设置或检索对象的右边边框颜色。</strong>参阅<a href="border-right-colors.htm">border-right-colors</a>属性。
+			<strong>设置或检索对象的右边边框颜色。</strong>参阅<a href="../only-firefox/border-right-colors.htm">border-right-colors</a>属性。
 			<ul>
 				<li>如果<a href="border-width.htm">border-width</a>等于0或<a href="border-style.htm">border-style</a>设置为none，本属性将被忽略。</li>
 				<li>对应的脚本特性为<strong>borderRightColor</strong>。</li>
@@ -84,7 +86,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -99,15 +100,18 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="support">6</td>
-						<td class="support">4</td>
-						<td class="support">5.1.7</td>
-						<td class="support">13</td>
-						<td class="support">11.5</td>
+						<th>版本</th>
+						<td class="partsupport">6.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">3.5</td>
 					</tr>
 				</tbody>
 			</table>
+			<ol class="support-info">
+				<li id="support1">IE6及更早浏览器不支持其颜色值为<a href="../../values/color/transparent.htm">transparent</a>关键字，如设置了该值，则效果等同于该值被缺省，其边框色取决于文本颜。</li>
+			</ol>
 		</div>
 	</section>
 	<section id="example" class="g-mod g-attr">

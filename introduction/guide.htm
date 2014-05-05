@@ -119,6 +119,52 @@
 				</ul>
 			</li>
 			<li>
+				<h3>兼容性：</h3>
+				<ul class="gitem">
+					<li>兼容性试图将会慢慢改成如下表：
+						<div class="cont g-attr">
+							<ul class="support-type">
+								<li><span class="support">浅绿</span> = 支持</li>
+								<li><span class="unsupport">红色</span> = 不支持</li>
+								<li><span class="partsupport">墨绿</span> = 部分支持</li>
+							</ul>
+							<table class="g-data">
+								<thead>
+									<tr>
+										<th><a href="#browser" title="查看本文档测试时所用浏览器版本">支持版本</a>\类型</th>
+										<th><span class="browser-ie">IE</span></th>
+										<th><span class="browser-firefox">Firefox</span></th>
+										<th><span class="browser-safari">Safari</span></th>
+										<th><span class="browser-chrome">Chrome</span></th>
+										<th><span class="browser-opera">Opera</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th>较早版本</th>
+										<td class="unsupport">6.0-7.0</td>
+										<td rowspan="3" class="support">4.0-6.0<sup class="fix">-moz-</sup></td>
+										<td rowspan="3" class="support">5.1</td>
+										<td rowspan="3" class="support">13.0<sup class="fix">-webkit-</sup></td>
+										<td rowspan="3" class="support">11.50</td>
+									</tr>
+									<tr>
+										<th>较新版本</th>
+										<td class="support">8.0<sup class="fix">-ms-</sup></td>
+									</tr>
+									<tr>
+										<th>最近版本</th>
+										<td class="support">9.0</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<p>假设上述表格是对某属性x的兼容性说明：那即表示IE6和IE7不支持该属性，IE8对该属性的支持还处在实验性质阶段，IE9及后续版本已支持该属性；Firefox4.0-6.0对该属性的支持还处在实验性质阶段；Safari、Chrome、Opera支持该属性。</p>
+						<p>如果是处在“实验性质”状态，则各浏览器的私有写法为：IE加 <strong class="g-color-light">-ms-</strong>；Firefox加 <strong class="g-color-light">-moz-</strong>；Safari和Chrome加 <strong class="g-color-light">-webkit-</strong>；Opera15以前加 <strong class="g-color-light">-o-</strong>，Opera15及以后加 <strong class="g-color-light">-webkit-</strong></p>
+					</li>
+				</ul>
+			</li>
+			<li>
 				<h3>脚本特性：</h3>
 				<ul class="gitem">
 					<li>

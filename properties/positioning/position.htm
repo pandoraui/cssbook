@@ -42,7 +42,7 @@
 		<h1 class="tit">position</h1>
 		<ul class="info">
 			<li><strong>版本：CSS2/3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -51,10 +51,12 @@
 	<section id="syntax" class="g-mod g-attr">
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
-			<p><strong>position</strong>：<mark class="defaultvalue">static</mark> | relative | absolute | fixed | <ins class="css3-value g-color-css3-new">center</ins> | <ins class="css3-value g-color-css3-new">page</ins></p>
+			<p><strong>position</strong>：<mark class="defaultvalue">static</mark> | relative | absolute | fixed | <ins class="css3-value g-color-css3-new">center</ins> | <ins class="css3-value g-color-css3-new">page</ins> | <ins class="css3-value g-color-css3-new">sticky</ins></p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">static</mark></p>
             <p><strong>适用于</strong>：除<a href="../layout/display.htm">display</a>属性定义为 table-column-group 和 table-column之外的所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定的值</p>
         </div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -64,15 +66,17 @@
 				<dt>static：</dt>
 				<dd>对象遵循常规流。<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性不会被应用。</dd>
 				<dt>relative：</dt>
-				<dd>对象遵循常规流，并且依据自身在正常流中的位置通过<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>属性进行偏移时不影响常规流中的任何元素。层叠通过<a href="z-index.htm">z-index</a>属性定义。</dd>
+				<dd>对象遵循常规流，并且参照自身在常规流中的位置通过<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>属性进行偏移时不影响常规流中的任何元素。</dd>
 				<dt>absolute：</dt>
-				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性进行绝对定位，盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠，其层叠通过<a href="z-index.htm">z-index</a>属性定义。</dd>
+				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性进行绝对定位，盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。</dd>
 				<dt>fixed：</dt>
-				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性以窗口为参考点进行定位，当出现滚动条时，对象不会随着滚动。<em class="g-color-light">IE6及以下不支持此参数值</em></dd>
+				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性以窗口为参考点进行定位，当出现滚动条时，对象不会随着滚动。</dd>
                 <dt class="g-color-css3-new">center：</dt>
-				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性指定盒子的位置或尺寸大小。盒子在其包含容器垂直水平居中。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠，其层叠通过<a href="z-index.htm">z-index</a>属性定义。（CSS3）</dd>
+				<dd>对象脱离常规流，使用<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>等属性指定盒子的位置或尺寸大小。盒子在其包含容器垂直水平居中。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。（CSS3）</dd>
                 <dt class="g-color-css3-new">page：</dt>
-				<dd>盒子的位置计算参照absolute。（CSS3）</dd>
+				<dd>盒子的位置计算参照absolute。盒子在分页媒体或者区域块内，盒子的包含块始终是初始包含块，否则取决于每个absolute模式。（CSS3）</dd>
+				<dt class="g-color-css3-new">sticky：</dt>
+				<dd>对象在常态时遵循常规流。它就像是 relative 和 fixed 的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）</dd>
 			</dl>
 		</div>
 		<div class="related">
@@ -84,6 +88,8 @@
 		<div class="cont">
 			<strong>检索对象的定位方式。</strong>
             <ul>
+            	<li>当position的值为 relative | absolute | fixed | <ins class="g-color-css3-new">center</ins> | <ins class="g-color-css3-new">page</ins> | <ins class="css3-value g-color-css3-new">sticky</ins> 时，其层叠级别通过<a href="z-index.htm">z-index</a>属性定义。</li>
+            	<li>绝对定位的元素，在<a href="top.htm">top</a>，<a href="right.htm">right</a>，<a href="bottom.htm">bottom</a>，<a href="left.htm">left</a>属性未设置时，会紧随在其前面的兄弟元素之后，但在位置上不影响常规流中的任何元素。用这个特性你或许会干这样的事：<a href="http://demo.doyoe.com/css/auto-list/absolute-flow.htm" target="_blank" class="external" rel="external">demo</a></li>
 				<li>对应的脚本特性为<strong>position</strong>。</li>
 			</ul>
 	  </div>
@@ -95,7 +101,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -110,22 +115,23 @@
 				</thead>
 				<tbody>
 					<tr>
-						<th>较早版本</th>
-						<td class="partsupport">6 <sup><a href="#support1">#1</a></sup></td>
-						<td rowspan="2" class="partsupport">4-18 <sup><a href="#support2">#2</a></sup></td>
-						<td rowspan="2" class="partsupport">5.1.7 <sup><a href="#support2">#2</a></td>
-						<td rowspan="2" class="partsupport">13-25 <sup><a href="#support2">#2</a></td>
-						<td rowspan="2" class="partsupport">11.5-12.5 <sup><a href="#support2">#2</a></td>
+						<th>版本</th>
+						<td class="partsupport">6.0 <sup><a href="#support1">#1</a> <a href="#support2">#2</a> <a href="#support3">#3</a></sup></td>
+						<td rowspan="2" class="partsupport">1.0-25.0 <sup><a href="#support2">#2</a> <a href="#support3">#3</a></sup></td>
+						<td rowspan="2" class="partsupport">1.0-5.1.7 <sup><a href="#support2">#2</a> <a href="#support3">#3</a></td>
+						<td rowspan="2" class="partsupport">1.0-31.0 <sup><a href="#support2">#2</a> <a href="#support3">#3</a></td>
+						<td rowspan="2" class="partsupport">4.0-18.0 <sup><a href="#support2">#2</a> <a href="#support3">#3</a></td>
 					</tr>
 					<tr>
-						<th>较新版本</th>
-						<td class="partsupport">7-10 <a href="#support2">#2</a></td>
+						<th>版本</th>
+						<td class="partsupport">7.0-11.0 <sup><a href="#support2">#2</a> <a href="#support3">#3</a></sup></td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">IE6及更早浏览器不支持position属性的fixed参数值。</li>
+				<li id="support1">不支持position属性的fixed参数值。</li>
                 <li id="support2">不支持position属性的CSS3新增属性值: <ins class="g-color-css3-new">center</ins> | <ins class="g-color-css3-new">page</ins>。</li>
+                <li id="support3">不支持position属性的CSS3新增属性值: <ins class="css3-value g-color-css3-new">sticky</ins>。</li>
 			</ol>
 		</div>
 	</section>

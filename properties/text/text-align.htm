@@ -42,7 +42,7 @@
 		<h1 class="tit">text-align</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1/3</strong></li>
-			<li>继承性：有</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -51,10 +51,12 @@
 	<section id="syntax" class="g-mod g-attr">
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
-			<p><strong>text-align</strong>：[ [ <ins class="css3-value g-color-css3-new">start</ins> | <ins class="css3-value g-color-css3-new">end</ins> | left | right | center ] || <ins class="css3-value g-color-css3-new"><a href="../../values/textual/string.htm">&lt;string&gt;</a></ins> ] | <ins class="css3-value g-color-css3-new">justify</ins> | <ins class="css3-value g-color-css3-new">match-parent</ins> | <ins class="css3-value g-color-css3-new">start end</ins></p>
+			<p><strong>text-align</strong>：<ins class="css3-value g-color-css3-new">start end</ins> | <ins class="css3-value g-color-css3-new">match-parent</ins> | <ins class="css3-value g-color-css3-new"><a href="../../values/textual/string.htm">&lt;string&gt;</a></ins>? [ <ins class="css3-value g-color-css3-new">start</ins> | <ins class="css3-value g-color-css3-new">end</ins> | left | right | center | <ins class="css3-value g-color-css3-new">justify</ins> ]</p>
 			<p><strong>默认值</strong>：<mark class="defaultvalue">start</mark></p>
 			<p><strong>适用于</strong>：块元素</p>
 		    <p><strong>继承性</strong>：有</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定值，除 match-parent 值外</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -137,7 +139,6 @@ li:after{display:inline-block;overflow:hidden;width:100%;height:0;content:'';}</
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>

@@ -42,7 +42,7 @@
 		<h1 class="tit">border-image-repeat</h1>
 		<ul class="info">
 			<li><strong>版本：CSS3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -55,6 +55,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">stretch</mark></p>
 			<p><strong>适用于</strong>：所有元素，除table元素设置了<a href="../table/border-collapse.htm">border-collapse</a>为collapse之外</p>
 			<p><strong>继承性</strong>：无</p>
+			<p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -66,9 +68,9 @@
 				<dt>repeat：</dt>
 				<dd>指定用平铺方式来填充边框背景图。当图片碰到边界时，如果超过则被截断。</dd>
 				<dt>round：</dt>
-				<dd>指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的大小直至正好可以铺满整个边框。<em class="g-color-light">写本文档时仅Firefox能看到该效果</em></dd>
+				<dd>指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的大小直至正好可以铺满整个边框。</dd>
 				<dt>space：</dt>
-				<dd>指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的之间的间距直至正好可以铺满整个边框。<em class="g-color-light">写本文档时尚无浏览器能看到该效果</em></dd>
+				<dd>指定用平铺方式来填充边框背景图。图片会根据边框的尺寸动态调整图片的之间的间距直至正好可以铺满整个边框。</dd>
 			</dl>
 		</div>
 	</section>
@@ -89,7 +91,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -105,16 +106,21 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="unsupport">6-10</td>
-						<td class="support">15</td>
-						<td class="support">5.1.7</td>
-						<td class="support">22</td>
-						<td class="experimentsupport">11.5-12.5 <sup><a href="#support1">#1</a></sup></td>
+						<td class="unsupport">6.0-10.0</td>
+						<td rowspan="2" class="partsupport">15.0-25.0 <sup><a href="#support1">#1</a></sup></td>
+						<td rowspan="2" class="partsupport">5.1.7 <sup><a href="#support1">#1</a></sup></td>
+						<td rowspan="2" class="partsupport">15.0-31.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="unsupport">10.5-14.0</td>
+					</tr>
+					<tr>
+						<th>版本</th>
+						<td class="partsupport">11.0 <sup><a href="#support1">#1</a></sup></td>
+						<td class="partsupport">15.0-18.0 <sup><a href="#support1">#1</a></sup></td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">不支持：border-image的分拆写法，只实验性质支持单一属性border-image。</li>
+				<li id="support1">不支持 space 属性值。</li>
 			</ol>
 		</div>
 	</section>
