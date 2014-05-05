@@ -26,3 +26,18 @@ CSS参考手册——[飘零雾雨](http://css.doyoe.com)
 
     //推送分支到远程
     git push --set-upstream origin gh-pages
+
+### github中如何撤销上一次的提交？
+
+在Github中，如果你发现上一次的提交有错误，希望撤销，可以按照下面的步骤：
+
+首先在本地撤销。输入下面的命令，在编辑界面删除第2行文字：
+
+    $ git rebase -i HEAD~2
+    Successfully rebased and updated refs/heads/master.
+
+然后撤销服务器上的提交：
+
+    $ git push origin +master
+
+参考文章：[http://stackoverflow.com/questions/448919/how-can-i-remove-a-commit-on-github]()
