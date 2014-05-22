@@ -42,7 +42,7 @@
 		<h1 class="tit">list-style-image</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1</strong></li>
-			<li>继承性：有</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -55,6 +55,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">none</mark></p>
 			<p><strong>适用于</strong>：所有 display:list-item 的元素</p>
 		    <p><strong>继承性</strong>：有</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：图像计算值或none</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -62,9 +64,9 @@
 		<div class="cont">
 			<dl>
 				<dt>none：</dt>
-				<dd>不指定图像</dd>
+				<dd>不指定图像，默认内容标记将被 <a href="list-style-type.htm">list-style-type</a> 代替。</dd>
 				<dt><a href="../../values/textual/url.htm">&lt;url&gt;</a>：</dt>
-				<dd>使用绝对或相对地址指定列表项标记图像。</dd>
+				<dd>使用绝对或相对地址指定列表项标记图像。如果图像地址无效，默认内容标记将被 <a href="list-style-type.htm">list-style-type</a> 代替。</dd>
 			</dl>
 		</div>
 	</section>
@@ -85,7 +87,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -101,11 +102,11 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="support">6</td>
-						<td class="support">4</td>
-						<td class="support">5.1.7</td>
-						<td class="support">13</td>
-						<td class="support">11.5</td>
+						<td class="support">6.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">1.0</td>
+						<td class="support">7.0</td>
 					</tr>
 				</tbody>
 			</table>
