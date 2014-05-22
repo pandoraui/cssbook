@@ -239,7 +239,8 @@ Global.copy = function(content,isAlertContent){
 					'font-weight' : [],
 					'font-size' : [],
 					'font-family' : [],
-					'font-stretch' : []
+					'font-stretch' : [],
+					'font-face' : []
 				},
 				text : {
 					'index' : ['字体(text)','其它文本属性参考'],
