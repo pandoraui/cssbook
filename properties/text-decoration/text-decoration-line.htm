@@ -42,7 +42,7 @@
 		<h1 class="tit">text-decoration-line</h1>
 		<ul class="info">
 			<li><strong>版本：CSS3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -55,6 +55,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">none</mark></p>
 			<p><strong>适用于</strong>：所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：指定的值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -79,8 +81,7 @@
 		<div class="cont">
 			<strong>检索或设置对象中的文本装饰线条的位置。</strong>
 			<ul>
-				<li class="g-color-light">相当于CSS2.1的 <a href="text-decoration.htm">text-decoration</a> 属性，可取值：none | underline | overline | line-through | blink （Firefox1.0及Opera4.0开始支持blink，其它浏览器尚不支持）</li>
-				<li class="g-color-light">Firefox只支持CSS2.1的 <a href="text-decoration.htm">text-decoration</a> 属性的blink值，在 text-decoration-line 中不支持blink，可以使用 -moz-text-blink 属性；</li>
+				<li class="g-color-light">相当于CSS2.1的 <a href="text-decoration.htm">text-decoration</a> 属性</li>
 				<li>对应的脚本特性为<strong>textDecorationLine</strong>。</li>
 			</ul>
 		</div>
@@ -92,7 +93,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -108,16 +108,16 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="unsupport">6-9</td>
-						<td class="experimentsupport">6-18 <sup><a href="#support1">#1</a></sup></td>
+						<td class="unsupport">6.0-11.0</td>
+						<td class="support">6.0-29.0 <sup class="fix">-moz-</sup></td>
 						<td class="unsupport">5.1.7</td>
-						<td class="unsupport">13-23</td>
-						<td class="unsupport">11.5-12.5</td>
+						<td class="unsupport">1.0-31.0</td>
+						<td class="unsupport">3.5-21.0</td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">不支持：blink参数值；</li>
+				<li>Firefox26.0开始支持blink，但没有效果，因为规范允许用户代理忽略该效果；</li>
 			</ol>
 		</div>
 	</section>

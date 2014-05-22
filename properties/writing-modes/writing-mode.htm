@@ -42,7 +42,7 @@
 		<h1 class="tit">writing-mode</h1>
 		<ul class="info">
 			<li><strong>版本：CSS3</strong></li>
-			<li>继承性：有</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -55,6 +55,8 @@
 			<p><strong>默认值</strong>：<mark class="defaultvalue">normal</mark></p>
 			<p><strong>适用于</strong>：除 table-row-group, table-column-group, table-row, table-column 之外的所有元素</p>
 		    <p><strong>继承性</strong>：有</p>
+		    <p><strong>动画性</strong>：否</p>
+		    <p><strong>计算值</strong>：特定值</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -92,7 +94,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -108,17 +109,23 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="partsupport">5.5 <sup><a href="#support2">#2</a></sup></td>
-						<td class="unsupport">4-18</td>
-						<td class="partsupport">5.1.7 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
-						<td class="partsupport">13-23 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
-						<td class="partsupport">11.5-12.5 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
+						<td class="support" rowspan="2">6.0-11.0 <sup><a href="#support1">#1</a> <a href="#support2">#2</a></sup></td>
+						<td class="unsupport" rowspan="2">1.0-29.0</td>
+						<td class="unsupport">1.0-6.0</td>
+						<td class="unsupport">1.0-27.0</td>
+						<td class="unsupport">1.0-12.5</td>
+					</tr>
+					<tr>
+						<th>版本</th>
+						<td class="support">7.0 <sup class="fix">-webkit-</td>
+						<td class="support">28.0 <sup class="fix">-webkit-</sup></td>
+						<td class="support">15.0 <sup class="fix">-webkit-</sup></td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">支持 <ins class="g-color-ie" title="IE私有属性值">lr-tb</ins> | <ins class="g-color-ie" title="IE私有属性值">tb-rl</ins> 作为属性值，但未实现效果</li>
-				<li id="support2">不支持标准属性：horizontal-tb | vertical-rl | vertical-lr</li>
+				<li id="support1">不支持标准属性：horizontal-tb | vertical-rl | vertical-lr</li>
+				<li id="support2">支持自带的私有属性值：<ins class="ie-value g-color-ie" title="IE私有属性值">lr-tb</ins> | <ins class="ie-value g-color-ie" title="IE私有属性值">tb-rl</ins></li>
 			</ol>
 		</div>
 	</section>
@@ -134,16 +141,22 @@
 <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
 <style>
 .test{width:100px;height:100px;margin:10px;border:1px solid #aaa;}
-.lr-tb{writing-mode:lr-tb;}
-.tb-rl{writing-mode:tb-rl;}
+.lr-tb{-webkit-writing-mode:horizontal-tb;writing-mode:lr-tb;writing-mode:horizontal-tb;}
+.tb-rl{-webkit-writing-mode:vertical-rl;writing-mode:tb-rl;writing-mode:vertical-rl;}
+.tb-lr{-webkit-writing-mode:vertical-lr;writing-mode:tb-rl;writing-mode:vertical-lr;}
 </style>
 </head>
 <body>
 <div class="test lr-tb">本段文字将按照水平从左到右的书写方向进行流动。</div>
 <div class="test tb-rl">本段文字将按照垂直从右到左的书写方向进行流动。</div>
+<div class="test tb-lr">本段文字将按照垂直从左到右的书写方向进行流动。</div>
 <ul class="tb-rl">
 	<li class="test">本段文字将按照垂直从右到左的书写方向进行流动。</li>
 	<li class="test">本段文字将按照垂直从右到左的书写方向进行流动。</li>
+</ul>
+<ul class="tb-lr">
+	<li class="test">本段文字将按照垂直从左到右的书写方向进行流动。</li>
+	<li class="test">本段文字将按照垂直从左到右的书写方向进行流动。</li>
 </ul>
 </body>
 </html>

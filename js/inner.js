@@ -264,6 +264,8 @@ Global.copy = function(content,isAlertContent){
 					'text-decoration-line' : [],
 					'text-decoration-color' : [],
 					'text-decoration-style' : [],
+					'text-decoration-skip' : [],
+					'text-underline-position' : [],
 					'text-shadow' : []
 				},
 				'writing-modes' : {

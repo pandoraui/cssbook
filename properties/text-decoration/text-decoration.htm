@@ -42,7 +42,7 @@
 		<h1 class="tit">text-decoration</h1>
 		<ul class="info">
 			<li><strong>版本：CSS1/3</strong></li>
-			<li>继承性：无</li>
+			<li>媒体：视觉</li>
 		</ul>
 		<!-- 插入浏览器信息 -->
 	</section>
@@ -52,10 +52,12 @@
 		<h2 class="tit">语法：</h2>
 		<div class="cont">
 			<p><strong>text-decoration</strong>：[ <a href="text-decoration-line.htm">text-decoration-line</a> ] || [ <a href="text-decoration-style.htm">text-decoration-style</a> ] || [ <a href="text-decoration-color.htm">text-decoration-color</a> ]</p>
-			<p><strong>默认值</strong>：<mark class="defaultvalue">看每个独立属性</mark></p>
+		    <p><strong>默认值</strong>：<mark class="defaultvalue">看每个独立属性</mark></p>
 			<p><strong>适用于</strong>：所有元素</p>
 		    <p><strong>继承性</strong>：无</p>
-			<!--<p><strong>相关属性</strong>：[ <a href="text-decoration-skip.htm">text-decoration-skip</a> ]</p>-->
+		    <p><strong>动画性</strong>：看每个独立属性</p>
+		    <p><strong>计算值</strong>：看每个独立属性</p>
+			<p><strong>相关属性</strong>：[ <a href="text-decoration-skip.htm">text-decoration-skip</a> ] || [ <a href="text-underline-position.htm">text-underline-position</a> ]</p>
 		</div>
 	</section>
 	<section id="value" class="g-mod g-attr">
@@ -63,7 +65,7 @@
 		<div class="cont">
 			<dl>
 				<dt>[ <a href="text-decoration-line.htm">text-decoration-line</a> ]：</dt>
-				<dd>指定文本装饰的种类。<em class="g-color-light">相当于CSS2.1的 text-decoration 属性，可取值：none | underline | overline | line-through | blink （Firefox1.0及Opera4.0开始支持blink，其它浏览器尚不支持）</em></dd>
+				<dd>指定文本装饰的种类。<em class="g-color-light">相当于CSS2.1的 text-decoration 属性，可取值：none | underline | overline | line-through | blink</em></dd>
 				<dt>[ <a href="text-decoration-style.htm">text-decoration-style</a> ]：</dt>
 				<dd>指定文本装饰的样式。</dd>
 				<dt>[ <a href="text-decoration-color.htm">text-decoration-color</a> ]：</dt>
@@ -88,7 +90,6 @@
 				<li><span class="support">浅绿</span> = 支持</li>
 				<li><span class="unsupport">红色</span> = 不支持</li>
 				<li><span class="partsupport">墨绿</span> = 部分支持</li>
-				<li><span class="experimentsupport">橙色</span> = 实验性质</li>
 			</ul>
 			<table class="g-data">
 				<thead>
@@ -104,16 +105,19 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="partsupport">6-9 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">4-18 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">5.1.7 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">13-23 <sup><a href="#support1">#1</a></sup></td>
-						<td class="partsupport">11.5-12.5 <sup><a href="#support2">#1</a></sup></td>
+						<td class="partsupport">6.0-11.0 <sup><a href="#support1">#1</a> <a href="#support4">#4</a></sup></td>
+						<td class="partsupport">1.0-29.0 <sup><a href="#support2">#2</a> <a href="#support4">#4</a></sup></td>
+						<td class="partsupport">5.1.7 <sup><a href="#support1">#1</a> <a href="#support4">#4</a></sup></td>
+						<td class="partsupport">1.0-31.0 <sup><a href="#support1">#1</a> <a href="#support4">#4</a></sup></td>
+						<td class="partsupport">3.5-21.0 <sup><a href="#support3">#3</a> <a href="#support4">#4</a></sup></td>
 					</tr>
 				</tbody>
 			</table>
 			<ol class="support-info">
-				<li id="support1">不支持：CSS3下的text-decoration复合属性写法。</li>
+				<li id="support1">支持blink但无效果。</li>
+				<li id="support2">Firefox1.0开始支持blink，并在Firefox23.0时移除。</li>
+				<li id="support3">Opera4.0开始支持blink，并在Opera15.0时移除。</li>
+				<li id="support4">不支持：CSS3下的text-decoration复合属性写法。</li>
 			</ol>
 		</div>
 	</section>
