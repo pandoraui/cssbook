@@ -2047,11 +2047,6 @@
 			<param name="ImageNumber" value="11">
 			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
-			<param name="Name" value="vw">
-			<param name="Local" value="units/length/vw.htm">
-			<param name="ImageNumber" value="11">
-			</OBJECT>
-		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="vh">
 			<param name="Local" value="units/length/vh.htm">
 			<param name="ImageNumber" value="11">
