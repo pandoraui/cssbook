@@ -45,29 +45,14 @@ jQuery.cookie = function(name, value, options) {
 window.topDocument = window.top.document;
 
 /*
- *  url地址的页面跳转,chm版本中应去掉。(该删除，其他不用删除)
-
-(function(){
-	if(window == window.top){
-		var host = window.location.host,
-			path = window.location.pathname;
-		$.cookie('pos',path,{expires:3600000*24, path: '/'});
-		var codeWin = window.open('http://' + host,'_self');
-		codeWin.document.close();
-	}
-	if(window != window.top){
-		var pos = $.cookie('pos');
-		if(pos){
-			$.cookie('pos',null,{path:'/'});
-			$('#archives',topDocument).attr('src',pos);
-		}
-	}
-})(); */
-
-/*
  *  全局函数的封装
  */
-var Global = {};
+var Global = {
+	//在线手册根目录，默认值
+	rootPath: 'http://pandoraui.github.io/cssbook',
+	//是否本地浏览或者chm浏览方式
+	isLocal: /(file|mk):/.test(location.protocol)
+};
 
 // 下拉菜单的展开收起的构造函数,参数s为下拉菜单最外层的容器;
 Global.folding = function(s){
@@ -82,13 +67,35 @@ Global.folding = function(s){
 };
 
 //取得标识里定位data位置的rel和标识着此项信息的name
-Global.getRel = function(id){
+(function(id){
 	var tag = $(id);
 	if(!tag.length){return};
 	Global.rel = tag.attr('rel');
 	Global.name = tag.attr('name');
-	Global.url = 'http://pandoraui.github.io/cssbook/' + Global.rel + '/' + Global.name + '.htm';
-}('#category');
+	Global.pathname = (Global.rel ? '/' + Global.rel : '') + '/' + Global.name + '.htm';
+	if (Global.isLocal) {
+		Global.url = Global.rootPath + Global.pathname;
+	} else {
+		Global.url = location.href;
+		Global.rootPath = Global.url.replace(Global.pathname, "");
+	}
+})('#category');
+
+//url地址的页面跳转
+if (!Global.isLocal) {
+	(function(){
+		if(window === window.top){
+			$.cookie('pos',Global.url,{path: '/'});
+			location = Global.rootPath;
+		} else {
+			var pos = $.cookie('pos');
+			if(pos){
+				$.cookie('pos',null,{path:'/'});
+				$('#archives',topDocument).attr('src',pos);
+			}
+		}
+	})();
+}
 
 //复制函数
 Global.copy = function(content,isAlertContent){
@@ -577,7 +584,8 @@ Global.copy = function(content,isAlertContent){
 					'rem' : [],
 					'vw' : [],
 					'vh' : [],
-					'vm' : [],
+					'vmax' : [],
+					'vmin' : [],
 					'cm' : [],
 					'mm' : [],
 					'in' : [],
@@ -742,7 +750,8 @@ Global.copy = function(content,isAlertContent){
 		found.find('a[type=detail]').attr('href',data['detail']);
 	};
 
-	var init = function(){
+	//init
+	(function(){
 		var found = $('#found'),
 			trans = $('#trans');
 
@@ -764,7 +773,7 @@ Global.copy = function(content,isAlertContent){
 
 		//绘制404页面
 		drawHtml(data);
-	}();
+	})();
 })();
 
 /*
@@ -773,13 +782,13 @@ Global.copy = function(content,isAlertContent){
 (function(){
 	//得到UA和浏览器版本
 	var UA = navigator.userAgent,
-		isWin7 = UA.match(/Windows NT 6.1/),
+		gteWin7 = UA.match(/Windows NT ([\d\.]+)/) && parseFloat(RegExp.$1) > 6,
 		isiPad = UA.match(/iPad/),
 		isiPhone = UA.match(/iPhone/),
 		isiPod = UA.match(/iPod/);
 
 	//给所有页面增加一些通用的模块，如执行环境，如copyright等。
-	var creatCommonMod = function (){
+	(function (){
 		//在页面头部的最后增加测试基础环境的模块
 		var testBrowser =
 		'<div class="g-browser g-clear">'+
@@ -816,20 +825,20 @@ Global.copy = function(content,isAlertContent){
 			tit.after(copyLink).after(share);
 		}
 
-	}();
+	})();
 
 	//复制本页链接功能
-	var copyLink = function(){
+	(function(){
 		var btn = $('#copylink');
 		btn.on({
 			click : function(){
 				Global.copy(Global.url,true);
 			}
 		});
-	}();
+	})();
 
 	//分享功能
-	var invite = function(){
+	(function(){
 		var container = $('#share'),
 			title = Global.title ? encodeURIComponent('CSS参考手册　' + Global.title + '　精彩呈现：') : encodeURIComponent('CSS参考手册'),
 			url =  Global.url,
@@ -866,17 +875,17 @@ Global.copy = function(content,isAlertContent){
 			window.open('http://www.douban.com/recommend/?title=' + title + '&url=' + url, '_blank');
 			return false;
 		});
-	}();
+	})();
 
 	//ipad 滚动条失效，将每个页面外层包裹一层。
-	var forIOS = function(){
+	(function(){
 		if(!isiPad && !isiPhone && !isiPod){return;}
 		if($('#wrapper').length){return;}
 		$('body').children().not('script').wrapAll('<div id="wrapper"></div>');
-	}();
+	})();
 
 	//运行示例代码以及相关操作
-	var runCode = function(){
+	(function(){
 		var example = $('#example'),
 			content = example.find('textarea').val(),
 			btnRun = example.find('.g-btn-sure');
@@ -888,7 +897,7 @@ Global.copy = function(content,isAlertContent){
 		var btnCopy = example.find('.g-btn-copy');
 
 		//运行代码
-		if(window == window.top && isWin7){
+		if(window == window.top && gteWin7){
 
 			//如果是win7下的chm版本，不支持直接打开浏览器运行
 			btnRun.on({
@@ -916,7 +925,7 @@ Global.copy = function(content,isAlertContent){
 				Global.copy(content);
 			}
 		})
-	}();
+	})();
 
 	//为自己和外层添加展开收起的折叠效果
 	Global.folding($('.g-combobox'));
@@ -948,9 +957,9 @@ Global.folding($('.g-combobox',topDocument));
 		allList = dytree.find('ul');
 
 	//让父页面中的左侧的导航树中对应子页面正在打开的项 被选中.
-	var selectDefaultTree = function(){
+	(function(){
 		if(!Global.name){return false;}
-		var url = Global.rel != '' ? Global.rel+'/'+Global.name+'.htm' : Global.name+'.htm',
+			var url = Global.pathname.slice(1),
 			onLink = dytree.find('a[href="'+url+'"]'),
 			onLinkList = onLink.parents('ul'),
 			onLinkFolder = onLinkList.siblings('.haschild'),
@@ -970,10 +979,10 @@ Global.folding($('.g-combobox',topDocument));
 		onLinkList.addClass('unfold');
 		onFolder.addClass('open');
 		onFolderList.addClass('unfold');
-	}();
+	})();
 
-	if(!($.browser.msie)){
-		if(dytree.attr('loaded')){return false};
+	if(!$.browser.msie && dytree.attr('loaded')){
+		return;
 	}
 
 
