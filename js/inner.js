@@ -87,7 +87,7 @@ Global.getRel = function(id){
 	if(!tag.length){return};
 	Global.rel = tag.attr('rel');
 	Global.name = tag.attr('name');
-	Global.url = 'http://pandoraui.github.io/cssbook/' + Global.rel + '/' + Global.name + '.htm';
+	Global.url = location.href;
 }('#category');
 
 //复制函数
@@ -577,7 +577,8 @@ Global.copy = function(content,isAlertContent){
 					'rem' : [],
 					'vw' : [],
 					'vh' : [],
-					'vm' : [],
+					'vmax' : [],
+					'vmin' : [],
 					'cm' : [],
 					'mm' : [],
 					'in' : [],
