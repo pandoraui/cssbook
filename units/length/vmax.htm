@@ -51,16 +51,11 @@
 		<h2 class="tit">说明：</h2>
 		<div class="cont">
 			<strong>相对于视口的宽度或高度中较大的那个。其中最大的那个被均分为100单位的vmax</strong>
-			<ul>
-				<li>CSS3中已经定义了<a href="../../values/functional/min().htm">min()</a>函数，所以vmax最终是否会纳入W3C标准还不确定。</li>
-				<li>
-					<div class="gquote">
-						<p class="gquote-tit"><strong>示例代码：</strong></p>
-						<blockquote class="gquote-cont"><pre><code>h1{font-size:8vmax;}</code></pre></blockquote>
-						<p class="gquote-info">如果视口的宽度是300mm，高度是200mm，那么上述代码中h1元素的字号将为16mm，即(8x200)/100，因为宽度比高度要大，所以计算的时候相对于宽度。</p>
-					</div>
-				</li>
-			</ul>
+			<div class="gquote">
+				<p class="gquote-tit"><strong>示例代码：</strong></p>
+				<blockquote class="gquote-cont"><pre><code>h1{font-size:8vmax;}</code></pre></blockquote>
+				<p class="gquote-info">如果视口的宽度是300mm，高度是200mm，那么上述代码中h1元素的字号将为16mm，即(8x200)/100，因为宽度比高度要大，所以计算的时候相对于宽度。</p>
+			</div>
 		</div>
 	</section>
 	<section id="compatible" class="g-mod g-attr">
@@ -86,7 +81,7 @@
 				<tbody>
 					<tr>
 						<th>版本</th>
-						<td class="unsupport">6-8</td>
+						<td rowspan="2" class="unsupport">6-11</td>
 						<td class="unsupport">2-18</td>
 						<td class="unsupport">3.1-5.1</td>
 						<td class="unsupport">4-19</td>
@@ -94,7 +89,6 @@
 					</tr>
 					<tr>
 						<th>版本</th>
-						<td class="support">9</td>
 						<td class="support">19</td>
 						<td class="support">6.1</td>
 						<td class="support">26</td>

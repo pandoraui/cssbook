@@ -51,16 +51,11 @@
 		<h2 class="tit">说明：</h2>
 		<div class="cont">
 			<strong>相对于视口的宽度或高度中较小的那个。其中最小的那个被均分为100单位的vmin</strong>
-			<ul>
-				<li>CSS3中已经定义了<a href="../../values/functional/min().htm">min()</a>函数，所以vmin最终是否会纳入W3C标准还不确定。</li>
-				<li>
-					<div class="gquote">
-						<p class="gquote-tit"><strong>示例代码：</strong></p>
-						<blockquote class="gquote-cont"><pre><code>h1{font-size:8vm;font-size:8vmin;}</code></pre></blockquote>
-						<p class="gquote-info">如果视口的宽度是300mm，高度是200mm，那么上述代码中h1元素的字号将为16mm，即(8x200)/100，因为高度比宽度要小，所以计算的时候相对于高度。</p>
-					</div>
-				</li>
-			</ul>
+			<div class="gquote">
+				<p class="gquote-tit"><strong>示例代码：</strong></p>
+				<blockquote class="gquote-cont"><pre><code>h1{font-size:8vm;font-size:8vmin;}</code></pre></blockquote>
+				<p class="gquote-info">如果视口的宽度是300mm，高度是200mm，那么上述代码中h1元素的字号将为16mm，即(8x200)/100，因为高度比宽度要小，所以计算的时候相对于高度。</p>
+			</div>
 		</div>
 	</section>
 	<section id="compatible" class="g-mod g-attr">
@@ -94,7 +89,7 @@
 					</tr>
 					<tr>
 						<th>版本</th>
-						<td class="support">9</td>
+						<td class="support">9 <sup><a href="#support1">#1</a></td>
 						<td class="support">19</td>
 						<td class="support">6.1</td>
 						<td class="support">26</td>
@@ -102,6 +97,9 @@
 					</tr>
 				</tbody>
 			</table>
+			<ol class="support-info">
+				<li id="support1">IE9下仅支持使用vm代替vmin</li>
+			</ol>
 		</div>
 	</section>
 	<section id="example" class="g-mod g-attr">
@@ -116,8 +114,9 @@
 <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
 <style>
 p {
-	font-size: 5vm;
-	font-size: 5vmin;
+	font-size: 12px;	/*IE6-8*/
+	font-size: 5vm;		/*IE9*/
+	font-size: 5vmin;	/*其他浏览器*/
 }
 </style>
 </head>
