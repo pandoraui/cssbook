@@ -56,13 +56,10 @@ var Global = {
 
 // 下拉菜单的展开收起的构造函数,参数s为下拉菜单最外层的容器;
 Global.folding = function(s){
-	s.live({
-		mouseenter : function() {
-			$(this).addClass('on');
-		},
-		mouseleave : function(){
-			$(this).removeClass('on');
-		}
+	s.hover(function() {
+		$(this).addClass('on');
+	}, function() {
+		$(this).removeClass('on');
 	});
 };
 
@@ -100,14 +97,14 @@ if (!Global.isLocal && Global.name) {
 //复制函数
 Global.copy = function(content,isAlertContent){
 	//判断浏览器,目前仅支持IE
-    if(window.clipboardData) {
-	    window.clipboardData.setData('text',content);
-	    alert('复制成功!');
-    }else{
-    	var tip = "你的浏览器不支持此功能,请手动进行复制。";
-    	// 如果带入了isAlertContent参数，火狐无法复制时，弹出的tip包含content。
-    	if(isAlertContent){prompt(tip+'链接地址为：',content)}else{alert(tip)}
-    }
+	if(window.clipboardData) {
+		window.clipboardData.setData('text',content);
+		alert('复制成功!');
+	}else{
+		var tip = "你的浏览器不支持此功能,请手动进行复制。";
+		// 如果带入了isAlertContent参数，火狐无法复制时，弹出的tip包含content。
+		if(isAlertContent){prompt(tip+'链接地址为：',content)}else{alert(tip)}
+	}
 };
 
 /*
@@ -632,9 +629,9 @@ Global.copy = function(content,isAlertContent){
 
 			experience : {
 				'index' : ['问题和经验','其它问题和经验参考'],
+				'refer' : ['参考资源列表'],
 				'bugs' : ['Bugs和解决方案'],
-				'skill' : ['技巧和经验'],
-				'refer' : ['参考资源列表']
+				'skill' : ['技巧和经验']
 			}
 		}
 		this.searchData();
@@ -929,6 +926,10 @@ Global.copy = function(content,isAlertContent){
 
 	//为自己和外层添加展开收起的折叠效果
 	Global.folding($('.g-combobox'));
+
+	$(".g-combobox .target").click(function(e) {
+		e.preventDefault();
+	});
 })();
 
 
