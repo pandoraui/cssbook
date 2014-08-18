@@ -82,7 +82,7 @@ Global.folding = function(s){
 })('#category');
 
 //url地址的页面跳转
-if (!Global.isLocal) {
+if (!Global.isLocal && Global.name) {
 	(function(){
 		if(window === window.top){
 			$.cookie('pos',Global.url,{path: '/'});
@@ -634,7 +634,7 @@ Global.copy = function(content,isAlertContent){
 				'index' : ['问题和经验','其它问题和经验参考'],
 				'bugs' : ['Bugs和解决方案'],
 				'skill' : ['技巧和经验'],
-				'other' : ['其它经验']
+				'refer' : ['参考资源列表']
 			}
 		}
 		this.searchData();
