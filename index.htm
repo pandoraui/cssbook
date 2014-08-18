@@ -10,6 +10,9 @@
 <!--[if lte IE 8]>
 <script src="js/html5.js"></script>
 <![endif]-->
+<!--[if lte IE 9]>
+<script src="js/selectivizr.js" id="selectivizr"></script>
+<![endif]-->
 <link rel="stylesheet" href="skin/layout.css" />
 <link rel="shortcut icon" type="image/x-icon" href="doyoe.ico" />
 </head>
@@ -17,14 +20,11 @@
 <header id="hd">
 	<section id="mashead" class="g-mod">
 		<hgroup class="sitename">
-			<a href="http://pandoraui.github.io/cssbook">
-                <h1>CSS参考手册</h1>
-                <h2>web前端开发参考手册系列</h2>
-            </a>
+			<h1>CSS参考手册</h1>
+			<h2>web前端开发参考手册系列</h2>
 		</hgroup>
 		<nav class="related">
 			<ul class="nav">
-                <li><a href="https://github.com/pandoraui/cssbook">GitHub Pro</a></li>
 				<li class="version">当前版本：v4.1.4</li>
 				<li class="download"><a href="css.chm" class="g-ico g-ico-download">下载最新chm版</a></li>
 				<li class="resource">
@@ -76,7 +76,6 @@
 					<ul class="unfold">
 						<li><div><a href="quicksearch.htm">速查总表 Quick Search</a></div></li>
 						<li><div><a href="css3-quicksearch.htm">CSS3速查表 CSS3 List</a></div></li>
-						<li><div><a href="css3-refer.htm">参考资源列表</a></div></li>
 						<li>
 							<div class="haschild"><a href="introduction/index.htm">简介 Introduction</a></div>
 							<ul>
@@ -711,7 +710,8 @@
 										<li><div class="css3-new"><a href="units/length/rem.htm">rem</a></div></li>
 										<li><div class="css3-new"><a href="units/length/vw.htm">vw</a></div></li>
 										<li><div class="css3-new"><a href="units/length/vh.htm">vh</a></div></li>
-										<li><div class="css3-new"><a href="units/length/vm.htm">vm</a></div></li>
+										<li><div class="css3-new"><a href="units/length/vmax.htm">vmax</a></div></li>
+										<li><div class="css3-new"><a href="units/length/vmin.htm">vmin</a></div></li>
 										<li><div><a href="units/length/cm.htm">cm</a></div></li>
 										<li><div><a href="units/length/mm.htm">mm</a></div></li>
 										<li><div><a href="units/length/in.htm">in</a></div></li>
@@ -770,6 +770,7 @@
 						<li>
 							<div class="haschild"><a href="experience/index.htm">问题和经验</a></div>
 							<ul>
+								<li><div><a href="experience/refer.htm">参考资源列表</a></div></li>
 								<li><div><a href="experience/bugs.htm">Bugs和解决方案</a></div></li>
 								<li><div><a href="experience/skill.htm">技巧和经验</a></div></li>
 								<li><div><a href="experience/other.htm">其它经验</a></div></li>
@@ -781,12 +782,12 @@
 		</nav>
 	</aside>
 </section>
-<footer id="ft">
+<!-- <footer id="ft">
 	<aside id="about" class="g-mod">
 		<p class="copyright">&copy; Copyright <a href="http://www.doyoe.com/" title="飘雨社区">Doyoe</a> 2006-2014</p>
 		<p class="related">为CSS参考手册<a id="offer2" class="offer" href="introduction/contribute.htm" title="CSS参考手册感谢有你">捐赠</a>您的一份力量</p>
 	</aside>
-</footer>
+</footer> -->
 <aside id="tips">
 	<section id="contribute" class="g-mod g-popup">
 		<div class="inner">
