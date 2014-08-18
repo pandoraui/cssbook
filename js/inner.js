@@ -651,7 +651,8 @@ if (!Global.isLocal && Global.name) {
 				'index' : ['问题和经验','其它问题和经验参考'],
 				'refer' : ['参考资源列表'],
 				'bugs' : ['Bugs和解决方案'],
-				'skill' : ['技巧和经验']
+				'skill' : ['技巧和经验'],
+				'other' : ['其它经验']
 			}
 		}
 		this.searchData();
