@@ -1,6 +1,6 @@
-=======
-cssbook
-=======
+# cssbook
+
+## 此项目不再维护，内容的更新已经合并迁移到新项目，请移步 https://github.com/webcoding/cssbook 
 
 CSS参考手册——[飘零雾雨](http://css.doyoe.com)
 
