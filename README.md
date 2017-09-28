@@ -4,7 +4,7 @@
 
 CSS参考手册——[飘零雾雨](http://css.doyoe.com)
 
-本站同步更新预览，cssbook：[http://pandoraui.github.io/cssbook](http://pandoraui.github.io/cssbook/)
+本站同步更新预览，cssbook：[http://css.devnode.cn](http://css.devnode.cn)
 
 ## 版权声明 Copyright
 
